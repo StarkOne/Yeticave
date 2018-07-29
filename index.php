@@ -3,6 +3,15 @@ $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Владислав';
 $user_avatar = 'img/user.jpg';
+$arr = ['Доски и лыжи','Крепления','Ботинки','Одежда','Инструменты','Разное'];
+$arr_prod = [
+	['Название' => '2014 Rossignol Distict Showboard', 'Категория' => 'Доски и лыжи', 'Цена' => '10999', 'url' => 'img/lot-1.jpg'],
+	['Название' => 'DC Ply Mens 2016/2017 Showboard', 'Категория' => 'Доски и лыжи', 'Цена' => '159999', 'url' => 'img/lot-2.jpg'],
+	['Название' => 'Крепление Union Contact Pro 2015 года размера L/XL', 'Категория' => 'Крепления', 'Цена' => '8000', 'url' => 'img/lot-3.jpg'],
+	['Название' => 'Ботинки для сноуборда DC Mutiny Charocal', 'Категория' => 'Ботинки', 'Цена' => '10999', 'url' => 'img/lot-4.jpg'],
+	['Название' => 'Куртка для сноуборда DC Mutiny Charocal', 'Категория' => 'Одежда', 'Цена' => '7500', 'url' => 'img/lot-5.jpg'],
+	['Название' => 'Маска Oakley Canopy', 'Категория' => 'Разное', 'Цена' => '5400', 'url' => 'img/lot-6.jpg']
+];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -77,17 +86,18 @@ $user_avatar = 'img/user.jpg';
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
+        	<?php foreach ($arr_prod as $k => $v) : ?>
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
+                    <img src="<?=$v['url']; ?>" width="350" height="260" alt="<?=$v['Название']; ?>">
                 </div>
                 <div class="lot__info">
-                    <span class="lot__category">Доски и лыжи</span>
-                    <h3 class="lot__title"><a class="text-link" href="lot.html">2014 Rossignol District Snowboard</a></h3>
+                    <span class="lot__category"><?=$v['Категория']; ?></span>
+                    <h3 class="lot__title"><a class="text-link" href="lot.html"><?=$v['Название']; ?></a></h3>
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost">10 999<b class="rub">р</b></span>
+                            <span class="lot__cost"><?=$v['Цена']; ?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
 
@@ -95,6 +105,7 @@ $user_avatar = 'img/user.jpg';
                     </div>
                 </div>
             </li>
+           	<?php endforeach; ?>
         </ul>
     </section>
 </main>
@@ -102,7 +113,12 @@ $user_avatar = 'img/user.jpg';
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <li class="nav__item">
+        		<?php foreach ($arr as $key ) : ?>
+        			<li class="nav__item">
+	              <a href="all-lots.html"><?php echo $key; ?></a>
+	            </li>
+        		<?php endforeach; ?>
+   <!--          <li class="nav__item">
                 <a href="all-lots.html">Доски и лыжи</a>
             </li>
             <li class="nav__item">
@@ -119,7 +135,7 @@ $user_avatar = 'img/user.jpg';
             </li>
             <li class="nav__item">
                 <a href="all-lots.html">Разное</a>
-            </li>
+            </li> -->
         </ul>
     </nav>
     <div class="main-footer__bottom container">
