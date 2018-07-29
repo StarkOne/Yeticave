@@ -12,7 +12,16 @@ $arr_prod = [
 	['Название' => 'Куртка для сноуборда DC Mutiny Charocal', 'Категория' => 'Одежда', 'Цена' => '7500', 'url' => 'img/lot-5.jpg'],
 	['Название' => 'Маска Oakley Canopy', 'Категория' => 'Разное', 'Цена' => '5400', 'url' => 'img/lot-6.jpg']
 ];
+
+	function price_prod($price) {
+		$price = ceil($price);
+		if($price > 1000) {
+			$price = number_format($price, 0, '', ' ');
+		}
+		return $price . "<b class='rub'>р</b>";
+	}
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -97,7 +106,7 @@ $arr_prod = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$v['Цена']; ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=price_prod($v['Цена']); ?></span>
                         </div>
                         <div class="lot__timer timer">
 
