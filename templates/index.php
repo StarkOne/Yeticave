@@ -41,7 +41,7 @@
                         <span class="lot__cost"><?=price_prod($v['Цена']); ?></span>
                     </div>
                     <div class="lot__timer timer">
-
+                        <?php echo $new_arr['time']; ?>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,13 @@
 	require_once('functions.php');
 	$is_auth = (bool) rand(0, 1);
 
+	date_default_timezone_set('europe/moscow');
+	$timestamp = strtotime('tomorrow midnight');
+	$timenow = time();
+	$t = $timestamp - $timenow;
+	$min = $t % 3600;
+	$time = floor($t / 3600) . " часов и " . floor($min / 60) . " минут";
+
 	$user_name = 'Владислав';
 	$user_avatar = 'img/user.jpg';
 	$arr = ['Доски и лыжи','Крепления','Ботинки','Одежда','Инструменты','Разное'];
@@ -22,5 +29,5 @@
 			return $price . "<b class='rub'>р</b>";
 		}
 
-	$pr = temple_add('index', ['arr_prod'=> $arr_prod]);
+	$pr = temple_add('index', ['arr_prod'=> $arr_prod, 'time' => $time]);
 	print(temple_add('layout', ['user_name'=> $user_name,'user_avatar'=> $user_avatar,'is_auth'=> $is_auth, 'title' => 'Главная страница', 'cont' => $pr, 'arr' => $arr]));
