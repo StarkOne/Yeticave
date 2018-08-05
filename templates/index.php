@@ -27,25 +27,27 @@
         <h2>Открытые лоты</h2>
     </div>
     <ul class="lots__list">
-    	<?php foreach ($new_arr['arr_prod'] as $k => $v) : ?>
+        <?php $i = 0; ?>
+    	<?php foreach ($arr_prod as $k => $v) : ?>
         <li class="lots__item lot">
             <div class="lot__image">
                 <img src="<?=$v['url']; ?>" width="350" height="260" alt="<?=$v['Название']; ?>">
             </div>
             <div class="lot__info">
                 <span class="lot__category"><?=$v['Категория']; ?></span>
-                <h3 class="lot__title"><a class="text-link" href="lot.html"><?=$v['Название']; ?></a></h3>
+                <h3 class="lot__title"><a class="text-link" href="pages/lot.php?id=<?=$i;?>"><?=$v['Название']; ?></a></h3>
                 <div class="lot__state">
                     <div class="lot__rate">
                         <span class="lot__amount">Стартовая цена</span>
                         <span class="lot__cost"><?=price_prod($v['Цена']); ?></span>
                     </div>
                     <div class="lot__timer timer">
-                        <?php echo $new_arr['time']; ?>
+                        <?php echo $time; ?>
                     </div>
                 </div>
             </div>
         </li>
+        <?php $i++; ?>
        	<?php endforeach; ?>
     </ul>
 </section>

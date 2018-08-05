@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Регистрация</title>
-  <link href="css/normalize.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <title>Все лоты</title>
+  <link href="../css/normalize.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -12,7 +12,7 @@
   <div class="main-header__container container">
     <h1 class="visually-hidden">YetiCave</h1>
     <a class="main-header__logo" href="index.html">
-      <img src="img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
+      <img src="../img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
     </a>
     <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
       <input type="search" name="search" placeholder="Поиск лота">
@@ -35,7 +35,7 @@
 <main>
   <nav class="nav">
     <ul class="nav__list container">
-      <li class="nav__item">
+      <li class="nav__item nav__item--current">
         <a href="all-lots.html">Доски и лыжи</a>
       </li>
       <li class="nav__item">
@@ -55,47 +55,186 @@
       </li>
     </ul>
   </nav>
-  <form class="form container" action="https://echo.htmlacademy.ru" method="post"> <!-- form--invalid -->
-    <h2>Регистрация нового аккаунта</h2>
-    <div class="form__item"> <!-- form__item--invalid -->
-      <label for="email">E-mail*</label>
-      <input id="email" type="text" name="email" placeholder="Введите e-mail" required>
-      <span class="form__error">Введите e-mail</span>
-    </div>
-    <div class="form__item">
-      <label for="password">Пароль*</label>
-      <input id="password" type="text" name="password" placeholder="Введите пароль" required>
-      <span class="form__error">Введите пароль</span>
-    </div>
-    <div class="form__item">
-      <label for="name">Имя*</label>
-      <input id="name" type="text" name="name" placeholder="Введите имя" required>
-      <span class="form__error">Введите имя</span>
-    </div>
-    <div class="form__item">
-      <label for="message">Контактные данные*</label>
-      <textarea id="message" name="message" placeholder="Напишите как с вами связаться" required></textarea>
-      <span class="form__error">Напишите как с вами связаться</span>
-    </div>
-    <div class="form__item form__item--file form__item--last">
-      <label>Аватар</label>
-      <div class="preview">
-        <button class="preview__remove" type="button">x</button>
-        <div class="preview__img">
-          <img src="img/avatar.jpg" width="113" height="113" alt="Ваш аватар">
-        </div>
-      </div>
-      <div class="form__input-file">
-        <input class="visually-hidden" type="file" id="photo2" value="">
-        <label for="photo2">
-          <span>+ Добавить</span>
-        </label>
-      </div>
-    </div>
-    <span class="form__error form__error--bottom">Пожалуйста, исправьте ошибки в форме.</span>
-    <button type="submit" class="button">Зарегистрироваться</button>
-    <a class="text-link" href="#">Уже есть аккаунт</a>
-  </form>
+  <div class="container">
+    <section class="lots">
+      <h2>Все лоты в категории <span>«Доски и лыжи»</span></h2>
+      <ul class="lots__list">
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Доски и лыжи</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">2014 Rossignol District Snowboard</a></h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">Стартовая цена</span>
+                <span class="lot__cost">10 999<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer">
+                16:54:12
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-2.jpg" width="350" height="260" alt="Сноуборд">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Доски и лыжи</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">DC Ply Mens 2016/2017 Snowboard</a></h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">12 ставок</span>
+                <span class="lot__cost">15 999<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer timer--finishing">
+                00:54:12
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-3.jpg" width="350" height="260" alt="Крепления">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Крепления</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">Крепления Union Contact Pro 2015 года размер
+              L/XL</a></h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">7 ставок</span>
+                <span class="lot__cost">8 000<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer">
+                10:54:12
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-4.jpg" width="350" height="260" alt="Ботинки">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Ботинки</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">Ботинки для сноуборда DC Mutiny Charocal</a>
+            </h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">12 ставок</span>
+                <span class="lot__cost">10 999<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer timer--finishing">
+                00:12:03
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-5.jpg" width="350" height="260" alt="Куртка">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Одежда</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">Куртка для сноуборда DC Mutiny Charocal</a></h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">12 ставок</span>
+                <span class="lot__cost">10 999<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer">
+                00:12:03
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-6.jpg" width="350" height="260" alt="Маска">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Разное</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">Маска Oakley Canopy</a></h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">Стартовая цена</span>
+                <span class="lot__cost">5 500<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer">
+                07:13:34
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-4.jpg" width="350" height="260" alt="Ботинки">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Ботинки</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">Ботинки для сноуборда DC Mutiny Charocal</a>
+            </h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">12 ставок</span>
+                <span class="lot__cost">10 999<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer timer--finishing">
+                00:12:03
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-5.jpg" width="350" height="260" alt="Куртка">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Одежда</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">Куртка для сноуборда DC Mutiny Charocal</a></h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">12 ставок</span>
+                <span class="lot__cost">10 999<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer">
+                00:12:03
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="lots__item lot">
+          <div class="lot__image">
+            <img src="img/lot-6.jpg" width="350" height="260" alt="Маска">
+          </div>
+          <div class="lot__info">
+            <span class="lot__category">Разное</span>
+            <h3 class="lot__title"><a class="text-link" href="lot.html">Маска Oakley Canopy</a></h3>
+            <div class="lot__state">
+              <div class="lot__rate">
+                <span class="lot__amount">Стартовая цена</span>
+                <span class="lot__cost">5 500<b class="rub">р</b></span>
+              </div>
+              <div class="lot__timer timer">
+                07:13:34
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <ul class="pagination-list">
+      <li class="pagination-item pagination-item-prev"><a>Назад</a></li>
+      <li class="pagination-item pagination-item-active"><a>1</a></li>
+      <li class="pagination-item"><a href="#">2</a></li>
+      <li class="pagination-item"><a href="#">3</a></li>
+      <li class="pagination-item"><a href="#">4</a></li>
+      <li class="pagination-item pagination-item-next"><a href="#">Вперед</a></li>
+    </ul>
+  </div>
 </main>
 
 <footer class="main-footer">

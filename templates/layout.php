@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $new_arr['title']; ?></title>
+    <title><?php echo $title; ?></title>
     <link href="css/normalize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -22,12 +22,12 @@
 
         <nav class="user-menu">
 				
-				<?php if ($new_arr['is_auth']) : ?>
+				<?php if ($is_auth) : ?>
 					<div class="user-menu__image">
-						<img src="<?=$new_arr['user_avatar']; ?>" alt="пользователь" width="40" height="40">
+						<img src="<?=$user_avatar; ?>" alt="пользователь" width="40" height="40">
 					</div>
 					<div class="user-menu__logged">
-						<p><?=$new_arr['user_name']; ?></p>
+						<p><?=$user_name; ?></p>
 					</div>
 				<?php else:?>
 					<ul class="user-menu__list">
@@ -42,13 +42,13 @@
 </header>
 
 <main class="container">
-	<?php echo $new_arr['cont']; ?>
+	<?php echo $cont; ?>
 </main>
 
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-        		<?php foreach ($new_arr['arr'] as $key ) : ?>
+        		<?php foreach ($arr as $key ) : ?>
         			<li class="nav__item">
 	              <a href="all-lots.html"><?php echo $key; ?></a>
 	            </li>
