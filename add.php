@@ -18,6 +18,7 @@
     } else {
       $path = $_FILES['main-file']['name'];
       $res = move_uploaded_file($_FILES['main-file']['tmp_name'], 'img/' . $path);
+      $img = "img/{$path}";
     }
     if(!(isset($_POST['lot-rate']) && filter_var($_POST['lot-rate'], FILTER_VALIDATE_INT) && $_POST['lot-rate'] != '')) {
       $error[] = 'lot-rate';
@@ -28,6 +29,18 @@
     if(!(isset($_POST['lot-date']) && $_POST['lot-date'] != '')) {
       $error[] = 'lot-date';
     }
+
+    $product = ['Название' => $_POST['lot-name'], 'Категория' => $_POST['category'], 'Цена' => $_POST['lot-rate'], 'url' => $img];
+    $pr = temple_add('lot', ['product'=> $product, 'time' => $time]);
+    print(temple_add('layout', ['user_name'=> $user_name,'user_avatar'=> $user_avatar,'is_auth'=> $is_auth, 'title' => 'Добавить', 'cont' => $pr, 'arr' => $arr]));
+    
+    
+    //$arr_prod[] = ['Название' => $_POST['lot-name'], 'Категория' => $_POST['category'], 'Цена' => $_POST['lot-rate'], 'url' => $img];
+    //array_push($arr_prod, ['Название' => $_POST['lot-name'], 'Категория' => $_POST['category'], 'Цена' => $_POST['lot-rate'], 'url' => $img]);
+    //$arrEnd = count($arr_prod) - 1;
+    //header("Location: lot.php?id=$arrEnd");
+
+    
   }
 
 

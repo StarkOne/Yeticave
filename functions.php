@@ -10,3 +10,10 @@
 			return "";
 		}
 	}
+	function price_prod($price) {
+    $price = ceil($price);
+    if($price > 1000) {
+      $price = number_format($price, 0, '', ' ');
+    }
+    return $price . "<b class='rub'>р</b>";
+  }

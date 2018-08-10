@@ -9,6 +9,12 @@ $bets = [
 $is_auth = (bool) rand(0, 1);
 $user_name = 'Владислав';
 $user_avatar = 'img/user.jpg';
+date_default_timezone_set('europe/moscow');
+$timestamp = strtotime('tomorrow midnight');
+$timenow = time();
+$t = $timestamp - $timenow;
+$min = $t % 3600;
+$time = floor($t / 3600) . " часов и " . floor($min / 60) . " минут";
 $arr = ['Доски и лыжи','Крепления','Ботинки','Одежда','Инструменты','Разное'];
 $arr_prod = [
 		['Название' => '2014 Rossignol Distict Showboard', 'Категория' => 'Доски и лыжи', 'Цена' => '10999', 'url' => 'img/lot-1.jpg'],
