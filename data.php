@@ -6,7 +6,9 @@ $bets = [
     ['name' => 'Евгений', 'price' => 10500, 'ts' => strtotime('-' . rand(25, 50) .' hour')],
     ['name' => 'Семён', 'price' => 10000, 'ts' => strtotime('last week')]
 ];
-
+$is_auth = (bool) rand(0, 1);
+$user_name = 'Владислав';
+$user_avatar = 'img/user.jpg';
 $arr = ['Доски и лыжи','Крепления','Ботинки','Одежда','Инструменты','Разное'];
 $arr_prod = [
 		['Название' => '2014 Rossignol Distict Showboard', 'Категория' => 'Доски и лыжи', 'Цена' => '10999', 'url' => 'img/lot-1.jpg'],

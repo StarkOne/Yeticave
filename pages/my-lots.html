@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Регистрация</title>
-  <link href="../css/normalize.min.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
+  <title>Мои ставки</title>
+  <link href="css/normalize.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -12,7 +12,7 @@
   <div class="main-header__container container">
     <h1 class="visually-hidden">YetiCave</h1>
     <a class="main-header__logo" href="index.html">
-      <img src="../img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
+      <img src="img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
     </a>
     <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
       <input type="search" name="search" placeholder="Поиск лота">
@@ -55,47 +55,154 @@
       </li>
     </ul>
   </nav>
-  <form class="form container" action="https://echo.htmlacademy.ru" method="post"> <!-- form--invalid -->
-    <h2>Регистрация нового аккаунта</h2>
-    <div class="form__item"> <!-- form__item--invalid -->
-      <label for="email">E-mail*</label>
-      <input id="email" type="text" name="email" placeholder="Введите e-mail" required>
-      <span class="form__error">Введите e-mail</span>
-    </div>
-    <div class="form__item">
-      <label for="password">Пароль*</label>
-      <input id="password" type="text" name="password" placeholder="Введите пароль" required>
-      <span class="form__error">Введите пароль</span>
-    </div>
-    <div class="form__item">
-      <label for="name">Имя*</label>
-      <input id="name" type="text" name="name" placeholder="Введите имя" required>
-      <span class="form__error">Введите имя</span>
-    </div>
-    <div class="form__item">
-      <label for="message">Контактные данные*</label>
-      <textarea id="message" name="message" placeholder="Напишите как с вами связаться" required></textarea>
-      <span class="form__error">Напишите как с вами связаться</span>
-    </div>
-    <div class="form__item form__item--file form__item--last">
-      <label>Аватар</label>
-      <div class="preview">
-        <button class="preview__remove" type="button">x</button>
-        <div class="preview__img">
-          <img src="img/avatar.jpg" width="113" height="113" alt="Ваш аватар">
-        </div>
-      </div>
-      <div class="form__input-file">
-        <input class="visually-hidden" type="file" id="photo2" value="">
-        <label for="photo2">
-          <span>+ Добавить</span>
-        </label>
-      </div>
-    </div>
-    <span class="form__error form__error--bottom">Пожалуйста, исправьте ошибки в форме.</span>
-    <button type="submit" class="button">Зарегистрироваться</button>
-    <a class="text-link" href="#">Уже есть аккаунт</a>
-  </form>
+  <section class="rates container">
+    <h2>Мои ставки</h2>
+    <table class="rates__list">
+      <tr class="rates__item">
+        <td class="rates__info">
+          <div class="rates__img">
+            <img src="img/rate1.jpg" width="54" height="40" alt="Сноуборд">
+          </div>
+          <h3 class="rates__title"><a href="lot.html">2014 Rossignol District Snowboard</a></h3>
+        </td>
+        <td class="rates__category">
+          Доски и лыжи
+        </td>
+        <td class="rates__timer">
+          <div class="timer timer--finishing">07:13:34</div>
+        </td>
+        <td class="rates__price">
+          10 999 р
+        </td>
+        <td class="rates__time">
+          5 минут назад
+        </td>
+      </tr>
+      <tr class="rates__item">
+        <td class="rates__info">
+          <div class="rates__img">
+            <img src="img/rate2.jpg" width="54" height="40" alt="Сноуборд">
+          </div>
+          <h3 class="rates__title"><a href="lot.html">DC Ply Mens 2016/2017 Snowboard</a></h3>
+        </td>
+        <td class="rates__category">
+          Доски и лыжи
+        </td>
+        <td class="rates__timer">
+          <div class="timer timer--finishing">07:13:34</div>
+        </td>
+        <td class="rates__price">
+          10 999 р
+        </td>
+        <td class="rates__time">
+          20 минут назад
+        </td>
+      </tr>
+      <tr class="rates__item rates__item--win">
+        <td class="rates__info">
+          <div class="rates__img">
+            <img src="img/rate3.jpg" width="54" height="40" alt="Крепления">
+          </div>
+          <div>
+            <h3 class="rates__title"><a href="lot.html">Крепления Union Contact Pro 2015 года размер L/XL</a></h3>
+            <p>Телефон +7 900 667-84-48, Скайп: Vlas92. Звонить с 14 до 20</p>
+          </div>
+        </td>
+        <td class="rates__category">
+          Крепления
+        </td>
+        <td class="rates__timer">
+          <div class="timer timer--win">Ставка выиграла</div>
+        </td>
+        <td class="rates__price">
+          10 999 р
+        </td>
+        <td class="rates__time">
+          Час назад
+        </td>
+      </tr>
+      <tr class="rates__item">
+        <td class="rates__info">
+          <div class="rates__img">
+            <img src="img/rate4.jpg" width="54" height="40" alt="Ботинки">
+          </div>
+          <h3 class="rates__title"><a href="lot.html">Ботинки для сноуборда DC Mutiny Charocal</a></h3>
+        </td>
+        <td class="rates__category">
+          Ботинки
+        </td>
+        <td class="rates__timer">
+          <div class="timer">07:13:34</div>
+        </td>
+        <td class="rates__price">
+          10 999 р
+        </td>
+        <td class="rates__time">
+          Вчера, в 21:30
+        </td>
+      </tr>
+      <tr class="rates__item rates__item--end">
+        <td class="rates__info">
+          <div class="rates__img">
+            <img src="img/rate5.jpg" width="54" height="40" alt="Куртка">
+          </div>
+          <h3 class="rates__title"><a href="lot.html">Куртка для сноуборда DC Mutiny Charocal</a></h3>
+        </td>
+        <td class="rates__category">
+          Одежда
+        </td>
+        <td class="rates__timer">
+          <div class="timer timer--end">Торги окончены</div>
+        </td>
+        <td class="rates__price">
+          10 999 р
+        </td>
+        <td class="rates__time">
+          Вчера, в 21:30
+        </td>
+      </tr>
+      <tr class="rates__item rates__item--end">
+        <td class="rates__info">
+          <div class="rates__img">
+            <img src="img/rate6.jpg" width="54" height="40" alt="Маска">
+          </div>
+          <h3 class="rates__title"><a href="lot.html">Маска Oakley Canopy</a></h3>
+        </td>
+        <td class="rates__category">
+          Разное
+        </td>
+        <td class="rates__timer">
+          <div class="timer timer--end">Торги окончены</div>
+        </td>
+        <td class="rates__price">
+          10 999 р
+        </td>
+        <td class="rates__time">
+          19.03.17 в 08:21
+        </td>
+      </tr>
+      <tr class="rates__item rates__item--end">
+        <td class="rates__info">
+          <div class="rates__img">
+            <img src="img/rate7.jpg" width="54" height="40" alt="Сноуборд">
+          </div>
+          <h3 class="rates__title"><a href="lot.html">DC Ply Mens 2016/2017 Snowboard</a></h3>
+        </td>
+        <td class="rates__category">
+          Доски и лыжи
+        </td>
+        <td class="rates__timer">
+          <div class="timer timer--end">Торги окончены</div>
+        </td>
+        <td class="rates__price">
+          10 999 р
+        </td>
+        <td class="rates__time">
+          19.03.17 в 08:21
+        </td>
+      </tr>
+    </table>
+  </section>
 </main>
 
 <footer class="main-footer">

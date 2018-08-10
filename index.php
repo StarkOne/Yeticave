@@ -1,7 +1,6 @@
 <?php
 	require_once('functions.php');
 	require_once('data.php');
-	$is_auth = (bool) rand(0, 1);
 
 	date_default_timezone_set('europe/moscow');
 	$timestamp = strtotime('tomorrow midnight');
@@ -9,9 +8,6 @@
 	$t = $timestamp - $timenow;
 	$min = $t % 3600;
 	$time = floor($t / 3600) . " часов и " . floor($min / 60) . " минут";
-
-	$user_name = 'Владислав';
-	$user_avatar = 'img/user.jpg';
 
 	function price_prod($price) {
 		$price = ceil($price);
