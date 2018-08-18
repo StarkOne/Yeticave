@@ -22,17 +22,19 @@
 
         <nav class="user-menu">
 				
-				<?php if ($is_auth) : ?>
+				<?php if ($_SESSION['auth']) : ?>
 					<div class="user-menu__image">
 						<img src="<?=$user_avatar; ?>" alt="пользователь" width="40" height="40">
 					</div>
 					<div class="user-menu__logged">
-						<p><?=$user_name; ?></p>
-					</div>
+                        <p><?=$_SESSION['name']; ?></p>
+                        <a href="logout.php">Выход</a>
+                    </div>
+                    
 				<?php else:?>
 					<ul class="user-menu__list">
 						<li class="user-menu__item"><a href="#">Регистрация</a></li>
-						<li class="user-menu__item"><a href="#">Вход</a></li>
+						<li class="user-menu__item"><a href="login.php">Вход</a></li>
 					</ul>
 				<?php endif;?>
         <!-- здесь должен быть PHP код для показа аватара пользователя -->

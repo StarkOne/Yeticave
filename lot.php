@@ -1,21 +1,22 @@
 <?php
   require_once('functions.php');
   require_once('data.php');
-
+  session_start();
+  
   if(isset($_GET['id'])) {
     $id = $_GET['id'];
   }
 
   if($_COOKIE > 0) {
-    $arr = json_decode($_COOKIE['arr']);
-    $arr[] = $id;
-    $arr = array_unique($arr);
-    $arr = json_encode($arr);
-    setcookie('arr', $arr, time() + 3600 * 24 * 7, '');
+    $COOK = json_decode($_COOKIE['COOK']);
+    $COOK[] = $id;
+    $COOK = array_unique($COOK);
+    $COOK = json_encode($COOK);
+    setcookie('COOK', $COOK, time() + 3600 * 24 * 7, '');
   } else {
-    $arr[] = $id;
-    $str = json_encode($arr);
-    setcookie('arr', $str, time() + 3600 * 24 * 7, '');
+    $COOK[] = $id;
+    $str = json_encode($COOK);
+    setcookie('COOK', $str, time() + 3600 * 24 * 7, '');
   }
 
   if(!isset($arr_prod[$id])){

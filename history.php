@@ -5,7 +5,7 @@
 	$newArr = [];
 	if($_COOKIE > 0) {
 		$j = count($arr_prod) - 1;
-		$num = json_decode($_COOKIE['arr']);
+		$num = json_decode($_COOKIE['COOK']);
 		foreach ($num as $key ) {
 			$newArr[] = $arr_prod[$key];
 		};

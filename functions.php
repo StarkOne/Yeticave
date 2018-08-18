@@ -1,6 +1,6 @@
 <?php
 	
-	function temple_add($path, $new_arr) {
+	function temple_add($path, $new_arr = []) {
 		if(file_exists('templates/' . $path . '.php')) {
 			extract($new_arr);
 			ob_start();
