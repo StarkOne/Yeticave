@@ -6,6 +6,18 @@
     $id = $_GET['id'];
   }
 
+  if($_COOKIE > 0) {
+    $arr = json_decode($_COOKIE['arr']);
+    $arr[] = $id;
+    $arr = array_unique($arr);
+    $arr = json_encode($arr);
+    setcookie('arr', $arr, time() + 3600 * 24 * 7, '');
+  } else {
+    $arr[] = $id;
+    $str = json_encode($arr);
+    setcookie('arr', $str, time() + 3600 * 24 * 7, '');
+  }
+
   if(!isset($arr_prod[$id])){
     http_response_code(404);
   }
